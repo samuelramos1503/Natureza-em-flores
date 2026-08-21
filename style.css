@@ -1,11 +1,8 @@
 /* ==========================================================================
-   Natureza em Flores — 30 Anos Surpreendendo Quem Você Ama
-   Instagram: @naturezaemflores
-   Cores Extraídas da Logo Oficial:
-   - Laranja Âmbar Vibrante: #f07c10
-   - Verde Folha Botânico: #147a3e
-   - Marfim Creme Quente: #fffdfa
-   - Verde Botânico Profundo (Fundo Dark): #16261b
+   Natureza em Flores — Paleta Invertida (Body Branco & Cards Verde Botânico)
+   - Body & Fundo do Site: Marfim Creme Branco (#fffdfa / #ffffff)
+   - Caixas, Cards, Montador & Horários: Verde Botânico da Logo (#147a3e / #0e5b2e)
+   - Detalhes & Destaques: Laranja Âmbar Vibrante (#f07c10)
 
    Tipografia:
    - Títulos & Destaques: 'Playfair Display', Georgia, serif
@@ -13,31 +10,32 @@
    ========================================================================== */
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
-  /* Cores Principais do Body (Invertido Verde Botânico Profundo) */
-  --color-bg-main: #16261b;         /* Fundo Verde Botânico */
-  --color-bg-alt: #101d14;          /* Fundo Escuro Secundário */
-  --color-bg-dark: #0a140d;
+  /* Fundo Principal do Site */
+  --color-bg-main: #fffdfa;         /* Marfim Creme Quente */
+  --color-bg-alt: #f4eee6;          /* Areia Suave */
+  --color-bg-dark: #101d14;         /* Verde Noturno Rodapé */
 
-  /* Cores dos Cards & Caixas (Marfim Creme Claro) */
-  --color-card-bg: #fffdfa;         /* Marfim Creme Quente */
-  --color-card-white: #ffffff;
-  --color-card-alt: #f7f0e6;        /* Areia Suave */
+  /* Caixas, Cards & Containers (Verde Botânico da Logo) */
+  --color-card-bg: #147a3e;         /* Verde Botânico Principal */
+  --color-card-dark: #0e5b2e;
+  --color-card-alt: #0c4d27;
 
-  /* Cores de Marca da Logo */
-  --color-primary: #f07c10;         /* Laranja Âmbar Natureza */
+  /* Cores de Marca */
+  --color-primary: #f07c10;         /* Laranja Âmbar Vibrante */
   --color-primary-hover: #d66800;
 
-  --color-green: #147a3e;           /* Verde Botânico da Logo */
+  --color-green: #147a3e;
   --color-green-hover: #0e5b2e;
-  --color-green-soft: rgba(20, 122, 62, 0.15);
 
-  /* Texto */
+  /* Texto no Body (Escuro) */
+  --color-text-dark: #16261b;
+  --color-text-muted-dark: #4a5e50;
+
+  /* Texto dentro das Caixas Verdes (Claro) */
   --color-text-light: #ffffff;
   --color-text-muted-light: #cbe3d3;
-  --color-text-dark: #19261c;
-  --color-text-muted-dark: #4a5e50;
 
   --color-whatsapp: #25d366;
   --color-whatsapp-hover: #20ba5a;
@@ -46,7 +44,7 @@
   --color-closed: #ef4444;
   --color-star: #fbbf24;
 
-  /* TIPOGRAFIA ROSA FLOR */
+  /* TIPOGRAFIA */
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
@@ -55,9 +53,9 @@
   --radius-lg: 24px;
   --radius-full: 9999px;
 
-  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 24px 50px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 4px 14px rgba(20, 122, 62, 0.1);
+  --shadow-md: 0 12px 30px rgba(20, 122, 62, 0.18);
+  --shadow-lg: 0 24px 50px rgba(20, 122, 62, 0.25);
 
   --transition-fast: 0.2s ease;
   --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -78,7 +76,7 @@ html {
 body {
   font-family: var(--font-sans);
   background-color: var(--color-bg-main);
-  color: var(--color-text-light);
+  color: var(--color-text-dark);
   line-height: 1.65;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -102,7 +100,7 @@ body {
 /* TYPOGRAPHY */
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
-  color: #ffffff;
+  color: var(--color-text-dark);
   line-height: 1.2;
   letter-spacing: -0.01em;
 }
@@ -131,11 +129,13 @@ a {
 
 .section { padding: 5rem 0; position: relative; }
 .section-alt { background-color: var(--color-bg-alt); }
-.section-dark { background-color: var(--color-bg-dark); }
+.section-dark { background-color: var(--color-bg-dark); color: #ffffff; }
 
 .section-header { margin-bottom: 3.2rem; }
-.section-title { font-size: clamp(2.2rem, 4vw, 3rem); margin-top: 0.4rem; font-weight: 700; color: #ffffff; }
-.section-lead { font-size: 1.08rem; color: var(--color-text-muted-light); max-width: 660px; margin: 0.6rem auto 0; }
+.section-title { font-size: clamp(2.2rem, 4vw, 3rem); margin-top: 0.4rem; font-weight: 700; color: var(--color-text-dark); }
+.section-dark .section-title { color: #ffffff; }
+.section-lead { font-size: 1.08rem; color: var(--color-text-muted-dark); max-width: 660px; margin: 0.6rem auto 0; }
+.section-dark .section-lead { color: var(--color-text-muted-light); }
 
 .text-center { text-align: center; }
 
@@ -149,11 +149,11 @@ a {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-primary);
-  background: rgba(240, 124, 16, 0.15);
+  color: var(--color-green);
+  background: rgba(20, 122, 62, 0.12);
   padding: 0.45rem 1.15rem;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(240, 124, 16, 0.35);
+  border: 1px solid rgba(20, 122, 62, 0.3);
 }
 
 .grid { display: grid; gap: 2rem; }
@@ -195,8 +195,8 @@ a {
 .btn-primary { background-color: var(--color-primary); color: #ffffff; font-weight: 800; }
 .btn-primary:hover { background-color: var(--color-primary-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(240, 124, 16, 0.4); }
 
-.btn-secondary { background-color: var(--color-green); color: #ffffff; border-color: transparent; font-weight: 800; }
-.btn-secondary:hover { background: var(--color-green-hover); transform: translateY(-2px); }
+.btn-secondary { background-color: #ffffff; color: var(--color-green); border-color: rgba(20, 122, 62, 0.3); font-weight: 800; }
+.btn-secondary:hover { background: var(--color-card-bg); color: #ffffff; transform: translateY(-2px); }
 
 .btn-whatsapp { background-color: var(--color-whatsapp); color: #ffffff; }
 .btn-whatsapp:hover { background-color: var(--color-whatsapp-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35); }
@@ -219,7 +219,7 @@ a {
   100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
 
-/* HEADER FIXO — MARFIM CREME COM BORDA LARANJA */
+/* HEADER FIXO — BRANCO / MARFIM COM BORDA LARANJA */
 .header {
   position: fixed;
   top: 0;
@@ -232,7 +232,7 @@ a {
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 2px solid var(--color-primary);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .header-container { display: flex; align-items: center; justify-content: space-between; }
@@ -261,7 +261,7 @@ a {
   .burger { display: flex; }
   .nav {
     position: fixed; top: 0; right: -100%; width: 80%; max-width: 320px; height: 100vh;
-    background: var(--color-card-bg); box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    background: var(--color-bg-main); box-shadow: -10px 0 30px rgba(0,0,0,0.15);
     flex-direction: column; align-items: flex-start; padding: 5.5rem 2rem 2rem; gap: 1.3rem; transition: right var(--transition-normal);
   }
   .nav.open { right: 0; }
@@ -273,7 +273,7 @@ a {
   padding-top: 8.5rem;
   padding-bottom: 5rem;
   position: relative;
-  background: linear-gradient(135deg, #16261b 0%, #101d14 50%, #0a140d 100%);
+  background: linear-gradient(135deg, #fffdfa 0%, #f4eee6 50%, #fffdfa 100%);
   overflow: hidden;
 }
 
@@ -284,12 +284,12 @@ a {
   font-size: clamp(2.5rem, 4.8vw, 3.7rem);
   margin: 1rem 0 1.2rem;
   line-height: 1.12;
-  color: #ffffff;
+  color: var(--color-text-dark);
 }
 
 .hero-description {
   font-size: 1.12rem;
-  color: var(--color-text-muted-light);
+  color: var(--color-text-muted-dark);
   margin-bottom: 2.2rem;
   line-height: 1.65;
 }
@@ -302,10 +302,10 @@ a {
   justify-content: center;
 }
 
-/* CARD EM DESTAQUE NO HERO — CREME MARFIM */
+/* CARD EM DESTAQUE NO HERO — VERDE BOTÂNICO INVERTIDO */
 .showcase-card {
   background: var(--color-card-bg);
-  color: var(--color-text-dark);
+  color: #ffffff;
   border-radius: var(--radius-lg);
   padding: 2.5rem 2rem;
   border: 2px solid var(--color-primary);
@@ -317,7 +317,7 @@ a {
 
 .showcase-badge {
   display: inline-block;
-  background: var(--color-green);
+  background: var(--color-primary);
   color: #ffffff;
   font-size: 0.78rem;
   font-weight: 800;
@@ -365,24 +365,24 @@ a {
   height: 100%;
   border-radius: 50%;
   background: var(--color-card-bg);
-  color: var(--color-green);
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.8rem;
-  border: 2px solid var(--color-primary);
+  border: 2px solid #ffffff;
 }
 
 .highlight-label {
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-green);
   margin-top: 0.5rem;
   text-align: center;
   line-height: 1.2;
 }
 
-/* CARDS DO CATÁLOGO — CAIXAS CREME MARFIM */
+/* CARDS DO CATÁLOGO — CAIXAS VERDE BOTÂNICO */
 .catalog-grid {
   display: flex;
   flex-wrap: wrap;
@@ -392,9 +392,9 @@ a {
 
 .product-card {
   background: var(--color-card-bg);
-  color: var(--color-text-dark);
+  color: #ffffff;
   border-radius: var(--radius-md);
-  border: 1px solid rgba(240, 124, 16, 0.3);
+  border: 2px solid var(--color-primary);
   overflow: hidden;
   box-shadow: var(--shadow-md);
   transition: all var(--transition-normal);
@@ -407,25 +407,25 @@ a {
 .product-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--color-primary);
+  border-color: #ffffff;
 }
 
 .product-thumb {
   height: 220px;
-  background: var(--color-card-alt);
+  background: var(--color-card-dark);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 3.8rem;
   position: relative;
-  border-bottom: 1px solid rgba(20, 122, 62, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .product-tag {
   position: absolute;
   top: 12px;
   right: 12px;
-  background: var(--color-green);
+  background: var(--color-primary);
   color: #ffffff;
   font-size: 0.72rem;
   font-weight: 800;
@@ -435,8 +435,8 @@ a {
 }
 
 .product-info { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
-.product-title { font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 0.4rem; font-weight: 700; color: var(--color-primary); }
-.product-desc { font-size: 0.9rem; color: var(--color-text-muted-dark); margin-bottom: 1.2rem; flex: 1; }
+.product-title { font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 0.4rem; font-weight: 700; color: #ffffff; }
+.product-desc { font-size: 0.9rem; color: var(--color-text-muted-light); margin-bottom: 1.2rem; flex: 1; }
 
 .product-card .btn-primary {
   background-color: var(--color-primary);
@@ -446,10 +446,10 @@ a {
   background-color: var(--color-primary-hover);
 }
 
-/* MONTADOR INTERATIVO — CAIXA CREME MARFIM */
+/* MONTADOR INTERATIVO — CAIXA VERDE BOTÂNICO */
 .builder-box {
   background: var(--color-card-bg);
-  color: var(--color-text-dark);
+  color: #ffffff;
   border-radius: var(--radius-lg);
   padding: 3rem 2.2rem;
   border: 2px solid var(--color-primary);
@@ -467,7 +467,7 @@ a {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  color: var(--color-primary);
+  color: #ffffff;
 }
 .builder-step-title span {
   width: 28px;
@@ -486,20 +486,21 @@ a {
 .options-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.9rem; }
 
 .option-card {
-  border: 2px solid rgba(20, 122, 62, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-sm);
   padding: 0.9rem 0.6rem;
   text-align: center;
   cursor: pointer;
   transition: all var(--transition-fast);
-  background: #ffffff;
+  background: var(--color-card-dark);
+  color: #ffffff;
 }
 .option-card:hover, .option-card.selected {
   border-color: var(--color-primary);
-  background: rgba(240, 124, 16, 0.1);
+  background: var(--color-primary);
 }
 .option-icon { font-size: 1.8rem; display: block; margin-bottom: 0.3rem; }
-.option-name { font-size: 0.85rem; font-weight: 700; color: var(--color-text-dark); }
+.option-name { font-size: 0.85rem; font-weight: 700; color: #ffffff; }
 
 /* DEPOIMENTOS GOOGLE COM SCROLL LATERAL EM TELAS MENORES */
 #avaliacoes .catalog-grid {
@@ -528,10 +529,10 @@ a {
 
 .review-card {
   background: var(--color-card-bg);
-  color: var(--color-text-dark);
+  color: #ffffff;
   border-radius: var(--radius-md);
   padding: 2rem;
-  border: 1px solid rgba(240, 124, 16, 0.3);
+  border: 2px solid var(--color-primary);
   box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
@@ -541,23 +542,23 @@ a {
   width: 100%;
 }
 .review-stars { color: var(--color-star); font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 0.8rem; }
-.review-text { font-size: 0.94rem; color: var(--color-text-muted-dark); font-style: italic; margin-bottom: 1.2rem; }
-.review-author { display: flex; align-items: center; gap: 0.8rem; border-top: 1px solid rgba(20, 122, 62, 0.1); padding-top: 1rem; }
-.author-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--color-green); color: #ffffff; font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
-.author-info strong { display: block; font-size: 0.9rem; font-weight: 700; color: var(--color-primary); }
-.author-info span { font-size: 0.75rem; color: var(--color-text-muted-dark); }
+.review-text { font-size: 0.94rem; color: var(--color-text-muted-light); font-style: italic; margin-bottom: 1.2rem; }
+.review-author { display: flex; align-items: center; gap: 0.8rem; border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 1rem; }
+.author-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--color-primary); color: #ffffff; font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+.author-info strong { display: block; font-size: 0.9rem; font-weight: 700; color: #ffffff; }
+.author-info span { font-size: 0.75rem; color: var(--color-text-muted-light); }
 
-/* HORÁRIOS & LOCALIZAÇÃO — CARD CREME MARFIM */
+/* HORÁRIOS & LOCALIZAÇÃO — CARD VERDE BOTÂNICO */
 .store-card {
   background: var(--color-card-bg);
-  color: var(--color-text-dark);
+  color: #ffffff;
   border-radius: var(--radius-md);
   padding: 2.2rem;
   border: 2px solid var(--color-primary);
   box-shadow: var(--shadow-lg);
 }
-.store-card h3 { color: var(--color-primary); font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 0.6rem; }
-.store-address { font-size: 0.92rem; color: var(--color-text-muted-dark); margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 0.5rem; }
+.store-card h3 { color: #ffffff; font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 0.6rem; }
+.store-address { font-size: 0.92rem; color: var(--color-text-muted-light); margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 0.5rem; }
 
 /* FOOTER */
 .footer { background: var(--color-bg-dark); color: var(--color-text-muted-light); padding: 4rem 0 2rem; border-top: 1px solid rgba(240, 124, 16, 0.3); }
