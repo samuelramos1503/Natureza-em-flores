@@ -333,10 +333,19 @@ a {
   display: flex;
   gap: 1.2rem;
   overflow-x: auto;
-  padding: 0.5rem 0 1.5rem;
+  padding: 0.5rem 1rem 1.2rem;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  justify-content: flex-start;
+  scroll-snap-type: x mandatory;
 }
+
+@media (min-width: 768px) {
+  .highlights-scroll {
+    justify-content: center;
+  }
+}
+
 .highlights-scroll::-webkit-scrollbar { height: 6px; }
 .highlights-scroll::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 10px; }
 
@@ -345,8 +354,9 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 95px;
+  width: 90px;
   cursor: pointer;
+  scroll-snap-align: start;
 }
 
 .highlight-circle {
