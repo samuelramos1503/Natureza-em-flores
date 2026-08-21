@@ -1,0 +1,9 @@
+# Desativa o Netlify Drawer / Feedback Toolbar para todos os visitantes
+[build]
+  publish = "."
+
+[build.environment]
+  NETLIFY_FEEDBACK_WIDGET = "false"
+
+[context.production.environment]
+  NETLIFY_FEEDBACK_WIDGET = "false"
